@@ -5069,16 +5069,15 @@ void Options::reconfigureDefaults()
 			case Options::kDynamicBundle:
 			case Options::kDyld:
 				// <rdar://problem/14676611> 16KB segments for arm64 kexts
-				if ( (fArchitecture == CPU_TYPE_ARM64)
-                     || (fArchitecture == CPU_TYPE_ARM) ) {
+				if ( fArchitecture == CPU_TYPE_ARM64
+                     || fArchitecture == CPU_TYPE_ARM ) {
 					fSegmentAlignment = 4096*4;
 				}
 				break;
 			case Options::kStaticExecutable:
 			case Options::kKextBundle:
 				// <rdar://problem/14676611> 16KB segments for arm64 kexts
-				if ( (fArchitecture == CPU_TYPE_ARM64)
-					) {
+				if ( fArchitecture == CPU_TYPE_ARM64 ) {
 					fSegmentAlignment = 4096*4;
 				}
 				break;

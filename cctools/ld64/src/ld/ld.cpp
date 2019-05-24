@@ -22,11 +22,12 @@
  * @APPLE_LICENSE_HEADER_END@
  */
  
+#ifdef __APPLE__ // ld64-port
 // start temp HACK for cross builds
 extern "C" double log2 ( double );
 //#define __MATH__
 // end temp HACK for cross builds
-
+#endif
 
 #include <stdlib.h>
 #include <sys/types.h>

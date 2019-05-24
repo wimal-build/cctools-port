@@ -1,6 +1,7 @@
 # Apple cctools port for Linux, *BSD and Windows (Cygwin) #
 
-Current Version: 895 + ld64-274.2.  
+Current Version: 921 + ld64-409.12.  
+cctools 895 -> 921, ld64 274.2 -> 409.12 ported by @matthewbauer.  
 Originally ported by [cjacker](http://ios-toolchain-based-on-clang-for-linux.googlecode.com).
 
 ## SUPPORTED HOSTS ##
@@ -74,4 +75,4 @@ If you get compile errors because of `unistd.h`, then please run
 
 ## TRAVIS CI ##
 
-[![Build Status](https://travis-ci.org/tpoechtrager/cctools-port.svg?branch=master)](https://travis-ci.org/tpoechtrager/cctools-port)
+[![Build Status](https://travis-ci.org/tpoechtrager/cctools-port.svg?branch=921-ld64-409.12)](https://travis-ci.org/tpoechtrager/cctools-port)
