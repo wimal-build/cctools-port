@@ -543,8 +543,7 @@ static void validateFixups(const ld::Atom& atom)
 		}
 		lastClusterSize = fit->clusterSize;
 		if ( fit->binding == ld::Fixup::bindingDirectlyBound ) {
-			// ld64-port: Temporarily commented to prevent the linker from crashing when using gcc
-			// assert(fit->u.target != NULL);
+			assert(fit->u.target != NULL);
 		}
 	}
 	switch (lastClusterSize) {

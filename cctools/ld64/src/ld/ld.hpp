@@ -762,27 +762,23 @@ struct Fixup
 		offsetInAtom(off), kind(k), clusterSize(c), weakImport(weakIm), 
 		binding(Fixup::bindingByNameUnbound),  
 		contentAddendOnly(false), contentDetlaToAddendOnly(false), contentIgnoresAddend(false) 
-			/* ld64-port: Temporarily commented to prevent the linker from crashing when using gcc */
-			{ /*assert(name != NULL);*/ u.name = name; }
+			{ assert(name != NULL); u.name = name; }
 		
 	Fixup(uint32_t off, Cluster c, Kind k, TargetBinding b, const char* name) :
 		offsetInAtom(off), kind(k), clusterSize(c), weakImport(false), binding(b),  
 		contentAddendOnly(false), contentDetlaToAddendOnly(false), contentIgnoresAddend(false) 
-			/* ld64-port: Temporarily commented to prevent the linker from crashing when using gcc */
-			{ /*assert(name != NULL);*/ u.name = name; }
+			{ assert(name != NULL); u.name = name; }
 		
 	Fixup(uint32_t off, Cluster c, Kind k, const Atom* targetAtom) :
 		offsetInAtom(off), kind(k), clusterSize(c), weakImport(false), 
 		binding(Fixup::bindingDirectlyBound),  
 		contentAddendOnly(false), contentDetlaToAddendOnly(false), contentIgnoresAddend(false) 
-			/* ld64-port: Temporarily commented to prevent the linker from crashing when using gcc */
-			{ /*assert(targetAtom != NULL);*/ u.target = targetAtom; }
+			{ assert(targetAtom != NULL); u.target = targetAtom; }
 		
 	Fixup(uint32_t off, Cluster c, Kind k, TargetBinding b, const Atom* targetAtom) :
 		offsetInAtom(off), kind(k), clusterSize(c), weakImport(false), binding(b),  
 		contentAddendOnly(false), contentDetlaToAddendOnly(false), contentIgnoresAddend(false) 
-			/* ld64-port: Temporarily commented to prevent the linker from crashing when using gcc */
-			{ /*assert(targetAtom != NULL);*/ u.target = targetAtom; }
+			{ assert(targetAtom != NULL); u.target = targetAtom; }
 		
 	Fixup(uint32_t off, Cluster c, Kind k, uint64_t addend) :
 		offsetInAtom(off), kind(k), clusterSize(c), weakImport(false), 
