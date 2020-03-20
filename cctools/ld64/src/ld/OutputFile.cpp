@@ -1765,6 +1765,9 @@ void OutputFile::applyFixUps(ld::Internal& state, uint64_t mhAddress, const ld::
 			case ld::Fixup::kindStoreTargetAddressX86BranchPCRel32:
 			case ld::Fixup::kindStoreTargetAddressX86PCRel32GOTLoad:
 			case ld::Fixup::kindStoreTargetAddressX86PCRel32TLVLoad:
+				// ld64-port: Temporary fix to prevent the linker from crashing when using gcc
+				if (!toTarget)
+					continue;
 				accumulator = addressOf(state, fit, &toTarget);	
 				if ( fit->contentDetlaToAddendOnly )
 					accumulator = 0;
@@ -4790,7 +4793,8 @@ void OutputFile::generateLinkEditInfo(ld::Internal& state)
 							target = state.indirectBindingTable[fit->u.bindingIndex];
 							break;
 					}
-					assert(target != NULL);
+					// ld64-port: Temporarily commented to prevent the linker from crashing when using gcc
+					//assert(target != NULL);
 				}
 				switch ( fit->kind ) {
 					case ld::Fixup::kindAddAddend:
